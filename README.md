@@ -6,6 +6,6 @@ This is a simple web application that allows you to send files to MOVEit Transfe
 1. Simply clone the repo, launch it in visual studio and run the application
 
 # Technologies used
-ASP NET Core
-MVC Architecture
-MOVEit API
+1. ASP NET Core
+2. MVC Architecture
+3. MOVEit API
