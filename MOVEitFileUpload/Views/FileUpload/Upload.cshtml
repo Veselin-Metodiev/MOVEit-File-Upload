@@ -8,22 +8,33 @@
 <form method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="username">Username:</label>
-        <input type="text" class="form-control" id="username" name="username" asp-for="Username" />
+        <input type="text" class="form-control" id="username" name="username" asp-for="Username" required="true"/>
     </div>
 
     <div class="form-group">
         <label for="password">Password:</label>
-        <input type="password" class="form-control" id="password" name="password" asp-for="Password" />
+        <input type="password" class="form-control" id="password" name="password" asp-for="Password" required="true" />
     </div>
 
     <div class="form-group">
         <label for="url">URL:</label>
-        <input type="text" class="form-control" id="url" name="url" asp-for="Url" placeholder="https://{your-server-name}" />
+        <input type="text" class="form-control" id="url" name="url" asp-for="Url" placeholder="https://{your-server-name}" required="true" />
     </div>
 
     <div class="form-group">
         <label for="file">Upload File:</label>
-        <input type="file" class="form-control-file" id="file" name="file" asp-for="File" />
+        <input type="file" class="form-control-file" id="file" name="file" asp-for="File" required="true" />
+    </div>
+
+    <div>
+        @if (ViewData["SuccessMessage"] != null)
+        {
+            <p style ="color: darkgreen">@ViewData["SuccessMessage"]</p>
+        }
+        else if (ViewData["ErrorMessage"] != null)
+        {
+            <p style="color: darkred">@ViewData["ErrorMessage"]</p>
+        }
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
