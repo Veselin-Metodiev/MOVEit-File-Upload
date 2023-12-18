@@ -1,0 +1,36 @@
+﻿@model MOVEitFileUpload.ViewModels.FileUploadViewModel
+@{
+    ViewData["Title"] = "Upload Page";
+}
+
+<h2>Upload Page</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" name="username" asp-for="Username" />
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" name="password" asp-for="Password" />
+    </div>
+
+    <div class="form-group">
+        <label for="url">URL:</label>
+        <input type="text" class="form-control" id="url" name="url" asp-for="Url" placeholder="https://{your-server-name}" />
+    </div>
+
+    <div class="form-group">
+        <label for="file">Upload File:</label>
+        <input type="file" class="form-control-file" id="file" name="file" asp-for="File" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<style>
+    .form-group {
+        margin-bottom: 15px;
+    }
+</style>
